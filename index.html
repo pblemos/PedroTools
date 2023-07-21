@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Pedro's Tools!</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/null/support.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <script>
+      async function copyToClipboard() {
+        var GDES = document.getElementById("inputForGDES").value;
+        var textToCopy = '<a href="https://forge.lmig.com/issues/browse/GDES-' + GDES + '">GDES-' + GDES + '</a>'
+        document.getElementById("alert").innerText = "Copied automatically to clipboard:\r\n" + textToCopy;
+        document.getElementById("visibilityControl").classList.toggle("invisible");
+        await navigator.clipboard.writeText(textToCopy);
+      }
+    </script>
+    <form class="p-5 border">
+      <div class="form-group">
+        <label for="inputForGDES">GDES Code</label>
+        <input type="text" class="form-control mt-1" id="inputForGDES" aria-describedby="Input for GDES Code" placeholder="Enter GDES Code">
+        <button type="button" class="btn btn-primary mt-2" onclick="copyToClipboard()">Copy Link to Clipboard</button>
+        <button type="button" class="btn btn-secondary mt-2" onclick="document.location.reload(true)">Reset</button>
+      </div>
+      <div class="invisible" id="visibilityControl">
+        <div class="alert alert-success mt-3" role="alert" id="alert"></div>
+      </div>
+    </form>
+  </body>
+</html>
