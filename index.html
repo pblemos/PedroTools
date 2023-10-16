@@ -14,7 +14,7 @@
     <script>
       async function copyToClipboard() {
         var GDES = document.getElementById("inputForGDES").value;
-        var textToCopy = '<a href="https://forge.lmig.com/issues/browse/GDES-' + GDES + '">GDES-' + GDES + '</a>'
+        var textToCopy = '<a href="https://libertymutual.atlassian.net/browse/GDES-' + GDES + '">GDES-' + GDES + '</a>'
         document.getElementById("alert").innerText = "Copied automatically to clipboard:\r\n" + textToCopy;
         document.getElementById("visibilityControl").classList.toggle("invisible");
         await navigator.clipboard.writeText(textToCopy);
